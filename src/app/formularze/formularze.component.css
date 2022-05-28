@@ -52,3 +52,11 @@ label::before {
   box-shadow: 0 0 5px #333;
   z-index: -1;
 }
+
+.container {
+  border: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  overflow-x: hidden;
+  }
