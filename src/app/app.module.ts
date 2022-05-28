@@ -9,7 +9,8 @@ import { FormularzeComponent } from './formularze/formularze.component';
 import { HomeComponent } from './home/home.component';
 import { OfferComponent } from './offer/offer.component';
 import { FaqComponent } from './faq/faq.component';
-import { ContactComponent } from './contact/contact.component'
+import { ContactComponent } from './contact/contact.component';
+
 
 
 @NgModule({
@@ -20,7 +21,7 @@ HomeComponent,
 routingComponents,
 OfferComponent,
 FaqComponent,
-ContactComponent
+ContactComponent,
 ],
 imports: [
 BrowserModule,
