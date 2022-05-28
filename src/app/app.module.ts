@@ -5,13 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormularzeComponent } from './formularze/formularze.component'
+import { FormularzeComponent } from './formularze/formularze.component';
+import { HomeComponent } from './home/home.component'
 
 
 @NgModule({
 declarations: [
 AppComponent,
-FormularzeComponent
+FormularzeComponent,
+HomeComponent
 ],
 imports: [
 BrowserModule,
