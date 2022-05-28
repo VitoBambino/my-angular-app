@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 input[type="checkbox"][id^="cb"] {
   display: none;
 }
@@ -50,4 +51,8 @@ label::before {
   transform: scale(0.9);
   box-shadow: 0 0 5px #333;
   z-index: -1;
+=======
+.tab {
+  border-radius: 10px;
+>>>>>>> 318ceaccc255ce86acee7a7d5efcdd142f647689
 }
