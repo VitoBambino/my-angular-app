@@ -36,13 +36,14 @@
     <h1 style="text-align: center; padding-top: 20px; color: white;">Wybierz date:</h1>
   </div>
 
-
-  <label for="start">Data:</label>
-    <input type="date" id="start" name="trip-start"
-      value="2018-07-22"
-      min="2018-01-01" max="2018-12-31">
+<div class="row justify-content-center">
+  <div class="col-md-4">
+  <label for="start">Dzień:</label>
+    <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31">
+  </div>
+  <div class="col-md-4">
     <div class="form-group form-check-inline">
-      <label for="inputState">  Godzina </label>
+      <label for="inputState">  Godzina: </label>
       <select id="inputState" class="form-control">
         <option selected>Choose...</option>
         <option>6:00</option>
@@ -59,7 +60,8 @@
         <option>17:00</option>
       </select>
     </div>
-
+  </div>
+  </div>
     <div class="tab" style="height: 100px; background: rgb(0, 0, 0);">
       <h1 style="text-align: center; padding-top: 20px; color: white;">Dane osobowe:</h1>
     </div>
@@ -85,7 +87,7 @@
       <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Wpisz dodatkowe informacje" rows="3"></textarea>
     </div>
     <div class="row">
-    <button type="button" class="btn btn-primary btn-lg">wyślij</button>
+    <button type="button" class="btn btn-primary btn-lg">Zarezerwuj</button>
     </div>
   </div>
   </form>
