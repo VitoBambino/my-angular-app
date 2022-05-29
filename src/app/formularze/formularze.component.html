@@ -1,5 +1,5 @@
 
-<form>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
   <div class="tab" style="height: 100px; background: rgb(0, 0, 0); ">
     <h1 style="text-align: center; padding-top: 20px; color: white;">Wybierz model:</h1>
   </div>
@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md-4">
         <div class="custom-control custom-radio image-checkbox">
-            <input type="radio" class="custom-control-input" id="ck2a" name="ck2">
+            <input type="radio" class="custom-control-input" id="ck2a" value="jed" name="ck2" ngModel>
             <label class="custom-control-label" for="ck2a">
                 <img src=".\assets\Super73_RSD-Malibu_White_02_RtSide_Web.jpg" alt="#" class="img-fluid">
             </label>
@@ -15,7 +15,7 @@
     </div>
     <div class="col-md-4">
         <div class="custom-control custom-radio image-checkbox">
-            <input type="radio" class="custom-control-input" id="ck2b" name="ck2">
+            <input type="radio" class="custom-control-input" id="ck2b" value="dwa" name="ck2" ngModel>
             <label class="custom-control-label" for="ck2b">
                 <img src=".\assets\Super73_RSD-Malibu_White_02_RtSide_Web.jpg" alt="#" class="img-fluid">
             </label>
@@ -23,7 +23,7 @@
     </div>
     <div class="col-md-4">
         <div class="custom-control custom-radio image-checkbox">
-            <input type="radio" class="custom-control-input" id="ck2c" name="ck2">
+            <input type="radio" class="custom-control-input" id="ck2c" value="tri" name="ck2" ngModel>
             <label class="custom-control-label" for="ck2c">
                 <img src=".\assets\Super73_RSD-Malibu_White_02_RtSide_Web.jpg" alt="#" class="img-fluid">
             </label>
@@ -39,12 +39,12 @@
 <div class="row justify-content-center">
   <div class="col-md-4">
   <label for="start">Dzień:</label>
-    <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31">
+    <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31" ngModel>
   </div>
   <div class="col-md-4">
     <div class="form-group form-check-inline">
       <label for="inputState">  Godzina: </label>
-      <select id="inputState" class="form-control">
+      <select id="inputState" class="form-control" name="hour" ngModel>
         <option selected>Choose...</option>
         <option>6:00</option>
         <option>7:00</option>
@@ -68,26 +68,26 @@
     <div class="container">
     <div class="form-group">
       <label for="exampleFormControlInput1">Imie</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Wpisz swoje imie">
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Wpisz swoje imie" name="imie" ngModel>
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Nazwisko</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Wpisz swoje nazwisko">
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Wpisz swoje nazwisko" name="nazwisko" ngModel>
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Adres e-mail</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="wpisz swój e-mail">
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="wpisz swój e-mail" name="email" ngModel>
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Numer telefonu</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="wpisz swój numer telefonu">
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="wpisz swój numer telefonu" name="telefon" ngModel>
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Wiadomość</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Wpisz dodatkowe informacje" rows="3"></textarea>
+      <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Wpisz dodatkowe informacje" rows="3" name="wiadomosc" ngModel></textarea>
     </div>
     <div class="row">
-    <button type="button" class="btn btn-primary btn-lg">Zarezerwuj</button>
+    <button type="submit" class="btn btn-primary btn-lg">Zarezerwuj</button>
     </div>
   </div>
   </form>

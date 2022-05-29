@@ -25,6 +25,7 @@ ContactComponent,
 ],
 imports: [
 BrowserModule,
+FormsModule,
 AppRoutingModule
 ],
 providers: [],
