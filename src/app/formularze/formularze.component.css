@@ -70,3 +70,7 @@ label::before {
   input:valid {
     background-color: rgb(129, 255, 146)(0, 0, 0);
   }
+
+  input:placeholder-shown {
+    background:white;
+  }
