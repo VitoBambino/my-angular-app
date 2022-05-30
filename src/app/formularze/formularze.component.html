@@ -1,5 +1,5 @@
 
-<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+<form class="needs-validation" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" >
   <div class="tab" style="height: 100px; background: rgb(0, 0, 0); ">
     <h1 style="text-align: center; padding-top: 20px; color: white;">Wybierz model:</h1>
   </div>
@@ -83,7 +83,11 @@
     </div>
     <div class="form-group">
       <label for="exampleFormControlInput1">Numer telefonu</label>
+<<<<<<< HEAD
       <input type="tel"  class="form-control" id="exampleFormControlInput1" placeholder="wpisz swój numer telefonu" name="telefon" ngModel minlength="8" required>
+=======
+      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="wpisz swój numer telefonu" name="telefon" ngModel required minlength="9">
+>>>>>>> c19848d92d679a4c90fdcc558cca30cacf7cbe93
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Wiadomość</label>
