@@ -90,7 +90,7 @@
       <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Wpisz dodatkowe informacje" rows="3" name="wiadomosc" ngModel></textarea>
     </div>
     <div class="row">
-    <button type="submit" class="btn btn-primary btn-lg">Zarezerwuj</button>
+    <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-lg">Zarezerwuj</button>
     </div>
   </div>
   </form>
