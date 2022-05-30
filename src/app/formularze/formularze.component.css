@@ -62,9 +62,9 @@ label::before {
   }
 
 
-  input.invalid{
+  input.valid{
     border-color: #900;
-    background-color: #FDD;
+    background-color: rgb(172, 255, 179);
   }
 
   input:focus.invalid {
@@ -88,5 +88,5 @@ label::before {
   }
 
   input:placeholder-shown {
-    background:white;
+    background:rgb(255, 190, 190);
   }
