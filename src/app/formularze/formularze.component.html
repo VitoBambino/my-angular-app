@@ -69,23 +69,36 @@
     </div>
     <div class="container">
     <div class="form-group">
-      <label for="validationDefault01">Imie</label>
-      <input type="text" class="form-control" id="validationDefault01" placeholder="Wpisz swoje imie" name="imie" ngModel minlength="3" required>
-      <div class="invalid-tooltip">
-        Please provide a valid zip.
-      </div>
+      <label for="name">Imie</label>
+      <input type="text" class="form-control" id="name" placeholder="Wpisz swoje imie" name="imie" ngModel minlength="3" required #name="ngModel">
+      <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+        <div *ngIf="name.errors && name.errors['required']">Pole jest wymagane</div>
+        <div *ngIf="name.errors && name.errors['minlength']">Pole powinno zawierać min. {{ name.errors && name.errors['minlength'].requiredLength }} znaki.</div>
+    </div>
     </div>
     <div class="form-group">
-      <label for="validationDefault01">Nazwisko</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Wpisz swoje nazwisko" name="nazwisko" ngModel minlength="3" required>
+      <label for="nazwisko">Nazwisko</label>
+      <input type="text" class="form-control" id="nazwisko" placeholder="Wpisz swoje nazwisko" name="nazwisko" ngModel minlength="3" required #nazwisko="ngModel">
+      <div class="alert alert-danger" *ngIf="nazwisko.touched && !nazwisko.valid">
+        <div *ngIf="nazwisko.errors && nazwisko.errors['required']">Pole jest wymagane</div>
+        <div *ngIf="nazwisko.errors && nazwisko.errors['minlength']">Pole powinno zawierac min. {{ nazwisko.errors && nazwisko.errors['minlength'].requiredLength }} znaki.</div>
+    </div>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlInput1">Adres e-mail</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="wpisz swój e-mail" name="email" ngModel required minlength="5">
+      <label for="mail">Adres e-mail</label>
+      <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control" id="mail" placeholder="wpisz swój e-mail" name="mail" ngModel required #mail="ngModel">
+      <div class="alert alert-danger" *ngIf="mail.touched && !mail.valid">
+        <div *ngIf="mail.errors && mail.errors['required']">Pole jest wymagane</div>
+        <div *ngIf="mail.errors && mail.errors['pattern']">Podaj prawidłowy adres e-mail</div>
+    </div>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlInput1">Numer telefonu</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="wpisz swój numer telefonu" name="telefon" ngModel required minlength="9">
+      <label for="phone">Numer telefonu</label>
+      <input type="tel" class="form-control" id="phone" placeholder="wpisz swój numer telefonu" name="phone" ngModel required minlength="9" #phone="ngModel">
+      <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">
+        <div *ngIf="phone.errors && phone.errors['required']">Pole jest wymagane</div>
+        <div *ngIf="phone.errors && phone.errors['minlength']">Wprowadź poprawny numer telefonu</div>
+    </div>
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Wiadomość</label>

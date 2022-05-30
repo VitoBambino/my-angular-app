@@ -87,9 +87,7 @@ label::before {
     padding: 0.3em;
   }
 
-  input:placeholder-shown {
-    background:rgb(255, 190, 190);
-  }
+
 
   *,
   *:before,
