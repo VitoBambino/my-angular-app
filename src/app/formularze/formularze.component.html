@@ -67,11 +67,14 @@
     </div>
     <div class="container">
     <div class="form-group">
-      <label for="exampleFormControlInput1">Imie</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Wpisz swoje imie" name="imie" ngModel>
+      <label for="validationDefault01">Imie</label>
+      <input type="email" class="form-control" id="validationDefault01" placeholder="Wpisz swoje imie" name="imie" ngModel required>
+      <div class="invalid-tooltip">
+        Please provide a valid zip.
+      </div>
     </div>
     <div class="form-group">
-      <label for="exampleFormControlInput1">Nazwisko</label>
+      <label for="validationDefault01">Nazwisko</label>
       <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Wpisz swoje nazwisko" name="nazwisko" ngModel>
     </div>
     <div class="form-group">

@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 
 
 
+
 @NgModule({
 declarations: [
 AppComponent,
@@ -22,6 +23,7 @@ routingComponents,
 OfferComponent,
 FaqComponent,
 ContactComponent,
+
 ],
 imports: [
 BrowserModule,
