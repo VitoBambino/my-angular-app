@@ -1,7 +1,8 @@
 .container {
-  border: none;
+  border: 1px solid steelblue;
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
   box-shadow: none;
   overflow-x: hidden;
+  border-radius: 5px;
   }
