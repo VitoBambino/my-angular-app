@@ -89,7 +89,7 @@ label::before {
 
 
 
-  *,
+  /* *,
   *:before,
   *:after{
       padding: 0;
@@ -119,4 +119,4 @@ label::before {
 
   .input-group-append {
     cursor: pointer;
-  }
+  } */
