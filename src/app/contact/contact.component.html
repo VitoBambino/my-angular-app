@@ -1,4 +1,5 @@
 
+
 <div class="container">
     <!--Section: Contact v.2-->
 <section class="mb-4">
@@ -20,8 +21,12 @@
                   <!--Grid column-->
                   <div class="col-md-6">
                       <div class="md-form mb-0">
-                          <label for="name" class="">Imię i nazwisko</label>
-                          <input type="text" id="name" name="name" class="form-control" ngModel>
+                          <label for="name">Imię i nazwisko</label>
+                          <input type="text" id="name" name="name" class="form-control" ngModel minlength="3" required #name="ngModel">
+                          <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                            <div *ngIf="name.errors && name.errors['required']">Pole jest wymagane</div>
+                            <div *ngIf="name.errors && name.errors['minlength']">Pole powinno zawierać min. {{ name.errors && name.errors['minlength'].requiredLength }} znaki.</div>
+                        </div>
                       </div>
                   </div>
                   <!--Grid column-->
@@ -29,8 +34,12 @@
                   <!--Grid column-->
                   <div class="col-md-6">
                       <div class="md-form mb-0">
-                          <label for="email" class="">Email</label>
-                          <input type="text" id="email" name="email" class="form-control" ngModel>
+                          <label for="email">Email</label>
+                          <input type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" id="email" name="email" class="form-control" ngModel required #email="ngModel">
+                          <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                            <div *ngIf="email.errors && email.errors['required']">Pole jest wymagane</div>
+                            <div *ngIf="email.errors && email.errors['pattern']">Podaj prawidłowy adres e-mail</div>
+                        </div>
                       </div>
                   </div>
                   <!--Grid column-->
@@ -42,8 +51,12 @@
               <div class="row">
                   <div class="col-md-12">
                       <div class="md-form mb-0">
-                          <label for="subject" class="">Temat</label>
-                          <input type="text" id="subject" name="subject" class="form-control" ngModel>
+                          <label for="subject">Temat</label>
+                          <input type="text" id="subject" name="subject" class="form-control" ngModel minlength="5" required #subject="ngModel">
+                          <div class="alert alert-danger" *ngIf="subject.touched && !subject.valid">
+                            <div *ngIf="subject.errors && subject.errors['required']">Pole jest wymagane</div>
+                            <div *ngIf="subject.errors && subject.errors['minlength']">Pole powinno zawierać min. {{ subject.errors && subject.errors['minlength'].requiredLength }} znaki.</div>
+                        </div>
                       </div>
                   </div>
               </div>
@@ -57,14 +70,18 @@
 
                       <div class="md-form">
                           <label for="message">Wiadomość</label>
-                          <textarea type="text" id="message" name="message" rows="3" class="form-control md-textarea" ngModel></textarea>
+                          <textarea type="text" id="message" name="message" rows="3" class="form-control md-textarea" ngModel minlenth="10" required #message="ngModel"></textarea>
+                          <div class="alert alert-danger" *ngIf="message.touched && !message.valid">
+                            <div *ngIf="message.errors && message.errors['required']">Pole jest wymagane</div>
+                            <div *ngIf="message.errors && message.errors['minlength']">Pole powinno zawierać min. {{ message.errors && message.errors['minlength'].requiredLength }} znaki.</div>
+                        </div>
                       </div>
 
                   </div>
               </div>
               <!--Grid row-->
               <div class="text-center text-md-left">
-                <button type="submit" class="btn btn-primary btn-lg">Wyślij</button>
+                <button type="submit" [disabled]="!userFormc.valid" class="btn btn-primary btn-lg">Wyślij</button>
               </div>
 
           </form>
