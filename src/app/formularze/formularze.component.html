@@ -35,21 +35,24 @@
 
 
     <div class="tab" style="height: 100px; background: rgb(0, 0, 0);">
-      <h1 style="text-align: center; padding-top: 20px; color: white;">Dane osobowe:</h1>
+      <h1 class="d-flex justify-content-center" style="text-align: center; padding-top: 20px; color: white;">Dane osobowe i data:</h1>
     </div>
 
 
-      <div class="d-flex justify-content-center">
-      <label for="start"></label>
-        <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31" ngModel required>
-      </div>
+
 
     <div class="container">
 
+      <div class="d-flex justify-content-center">
+
+        <label for="start">Data</label>
+          <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31" ngModel required>
+      </div>
+
       <div class="form-group">
         <label for="inputState">  Godzina: </label>
-        <select id="inputState"  class="form-control" name="hour" ngModel required>
-          <option selected>Choose...</option>
+        <select id="inputState"  placeholder="Wybierz date" class="form-control" name="hour" ngModel required>
+          <option selected>Wybierz godzine...</option>
           <option>6:00</option>
           <option>7:00</option>
           <option>8:00</option>
@@ -98,14 +101,6 @@
         <div *ngIf="phone.errors && phone.errors['minlength']">Wprowadź poprawny numer telefonu</div>
     </div>
 
-    <div class="form-group">
-      <label for="start">Data:</label>
-        <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31" ngModel required>
-      <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">
-        <div *ngIf="phone.errors && phone.errors['required']">Pole jest wymagane</div>
-        <div *ngIf="phone.errors && phone.errors['minlength']">Wprowadź poprawny numer telefonu</div>
-    </div>
-    </div>
 
     </div>
     <div class="form-group">
@@ -120,4 +115,22 @@
   </div>
   </form>
 
-
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
