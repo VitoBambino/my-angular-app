@@ -32,42 +32,39 @@
 </div>
 
 
-  <div class="tab" style="height: 100px; background: rgb(0, 0, 0); ">
-    <h1 style="text-align: center; padding-top: 20px; color: white;">Wybierz date:</h1>
-  </div>
 
 
-
-<div class="row justify-content-center">
-  <div class="col-md-4">
-  <label for="start"></label>
-    <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31" ngModel required>
-  </div>
-  <div class="col-md-4">
-    <div class="form-group form-check-inline">
-      <label for="inputState">  Godzina: </label>
-      <select id="inputState"  class="form-control" name="hour" ngModel required>
-        <option selected>Choose...</option>
-        <option>6:00</option>
-        <option>7:00</option>
-        <option>8:00</option>
-        <option>9:00</option>
-        <option>10:00</option>
-        <option>11:00</option>
-        <option>12:00</option>
-        <option>13:00</option>
-        <option>14:00</option>
-        <option>15:00</option>
-        <option>16:00</option>
-        <option>17:00</option>
-      </select>
-    </div>
-  </div>
-  </div>
     <div class="tab" style="height: 100px; background: rgb(0, 0, 0);">
       <h1 style="text-align: center; padding-top: 20px; color: white;">Dane osobowe:</h1>
     </div>
+
+
+      <div class="d-flex justify-content-center">
+      <label for="start"></label>
+        <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31" ngModel required>
+      </div>
+
     <div class="container">
+
+      <div class="form-group">
+        <label for="inputState">  Godzina: </label>
+        <select id="inputState"  class="form-control" name="hour" ngModel required>
+          <option selected>Choose...</option>
+          <option>6:00</option>
+          <option>7:00</option>
+          <option>8:00</option>
+          <option>9:00</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>12:00</option>
+          <option>13:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+          <option>17:00</option>
+        </select>
+      </div>
+
     <div class="form-group">
       <label for="name">Imie</label>
       <input type="text" class="form-control" id="name" placeholder="Wpisz swoje imie" name="imie" ngModel minlength="3" required #name="ngModel">
@@ -92,6 +89,7 @@
         <div *ngIf="mail.errors && mail.errors['pattern']">Podaj prawidłowy adres e-mail</div>
     </div>
     </div>
+
     <div class="form-group">
       <label for="phone">Numer telefonu</label>
       <input type="tel" class="form-control" id="phone" placeholder="wpisz swój numer telefonu" name="phone" ngModel required minlength="9" #phone="ngModel">
@@ -99,11 +97,23 @@
         <div *ngIf="phone.errors && phone.errors['required']">Pole jest wymagane</div>
         <div *ngIf="phone.errors && phone.errors['minlength']">Wprowadź poprawny numer telefonu</div>
     </div>
+
+    <div class="form-group">
+      <label for="start">Data:</label>
+        <input type="date" id="start" name="trip-start" value="today" min="today" max="2050-12-31" ngModel required>
+      <div class="alert alert-danger" *ngIf="phone.touched && !phone.valid">
+        <div *ngIf="phone.errors && phone.errors['required']">Pole jest wymagane</div>
+        <div *ngIf="phone.errors && phone.errors['minlength']">Wprowadź poprawny numer telefonu</div>
+    </div>
+    </div>
+
     </div>
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Wiadomość</label>
       <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Wpisz dodatkowe informacje" rows="3" name="wiadomosc" ngModel ></textarea>
     </div>
+
+
     <div class="row">
     <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-lg">Zarezerwuj</button>
     </div>
