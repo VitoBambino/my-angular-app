@@ -52,10 +52,4 @@ header .overlay {
   }
 }
 
-.container {
-  border: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  overflow-x: hidden;
-  }
+
