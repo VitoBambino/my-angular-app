@@ -1,5 +1,5 @@
 
-<form class="needs-validation" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)" >
+<form class="needs-validation" #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value); userForm.resetForm()" >
   <div class="tab" style="height: 100px; background: rgb(0, 0, 0); ">
     <h1 style="text-align: center; padding-top: 20px; color: white;">Wybierz model:</h1>
   </div>
@@ -110,7 +110,7 @@
 
 
     <div class="row">
-    <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary btn-lg">Zarezerwuj</button>
+    <button type="submit" [disabled]="!userForm.valid" onsubmit="this.reset();" class="btn btn-primary btn-lg">Zarezerwuj</button>
     </div>
   </div>
   </form>

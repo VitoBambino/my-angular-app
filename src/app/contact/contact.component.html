@@ -13,7 +13,7 @@
 
       <!--Grid column-->
       <div class="col-md-9 mb-md-0 mb-5">
-        <form #userFormc="ngForm" (ngSubmit)="onSubmit(userFormc.value)">
+        <form #userFormc="ngForm" (ngSubmit)="onSubmit(userFormc.value); userFormc.resetForm()">
 
               <!--Grid row-->
               <div class="row">
